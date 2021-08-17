@@ -5,15 +5,20 @@
 
 - project:
     default-branch: main
+    merge-mode: squash-merge
     gh_check:
       jobs:
+        - markdownlint
         - demo-job
     gh_gate:
       jobs:
         - demo-job
+        - markdownlint
     gh_post:
       jobs:
         - demo-job
+        - markdownlint
     gh_tag:
       jobs:
         - demo-job
+        - markdownlint
